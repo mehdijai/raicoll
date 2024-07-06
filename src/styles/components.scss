@@ -14,3 +14,17 @@ ul {
     margin: 0;
   }
 }
+
+.text-field {
+  padding: 5px 15px;
+  background-color: $dark-alt;
+  color: $light;
+  border: none;
+  outline: none;
+  &.h-full {
+    height: 100%;
+  }
+  &.search-field {
+    width: 430px;
+  }
+}

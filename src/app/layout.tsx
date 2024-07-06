@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-const inter = Inter({ subsets: ["latin"] });
+import { Public_Sans } from "next/font/google";
+const public_Sans = Public_Sans({ subsets: ["latin"] });
 import styles from "./layout.module.scss";
 import "@styles/components.scss";
 import Sidebar from "../components/sidebar";
+import Header from "@/components/header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,9 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${styles.body} ${inter.className}`}>
+      <body className={`${styles.body} ${public_Sans.className}`}>
         <Sidebar />
-        <main>{children}</main>
+        <main className={styles.main}>
+          <Header />
+          <div>{children}</div>
+        </main>
       </body>
     </html>
   );
