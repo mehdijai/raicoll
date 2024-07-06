@@ -1,0 +1,13 @@
+.body {
+  background-color: $dark;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: 100%;
+  align-items: stretch;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
