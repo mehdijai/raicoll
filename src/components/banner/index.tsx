@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./banner.module.scss";
 import { IconMusic } from "@tabler/icons-react";
+import TopChart from "./topChart";
 
 const artists = [
   {
@@ -71,6 +72,7 @@ export default function Banner() {
           className={styles.portrait}
         />
       </div>
+      <TopChart />
     </div>
   );
 }
