@@ -1,0 +1,35 @@
+.cards-slider {
+  width: 100%;
+  padding: 10px 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    right: 0;
+    background-color: darken($dark, 5);
+    width: 20px;
+    filter: blur(20px);
+    z-index: 100;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 100%;
+    left: 0;
+    background-color: darken($dark, 5);
+    width: 20px;
+    filter: blur(20px);
+    z-index: 101;
+  }
+  //   overflow-x: hidden;
+  //   .content {
+  //     display: flex;
+  //     align-items: stretch;
+  //     gap: 1rem;
+  //   }
+}

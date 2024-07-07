@@ -1,0 +1,21 @@
+.song-card {
+  width: 150px;
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+  }
+  h5 {
+    margin-top: 5px;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  h6 {
+    margin-top: 5px;
+    color: lighten($gray, 10);
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+}

@@ -3,4 +3,14 @@
   padding-bottom: 5rem;
   height: 100vh;
   overflow-y: auto;
+
+  .new-releases {
+    padding: 2rem 0;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+  }
 }
