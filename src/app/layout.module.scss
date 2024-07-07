@@ -16,4 +16,8 @@
     grid-template-rows: 60px 1fr;
     grid-template-columns: 100%;
   }
+  .page {
+    height: 100%;
+    overflow: hidden;
+  }
 }

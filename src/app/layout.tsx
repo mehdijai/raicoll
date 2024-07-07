@@ -22,7 +22,7 @@ export default function RootLayout({
         <Sidebar />
         <main className={styles.main}>
           <Header />
-          <div>{children}</div>
+          <div className={styles.page}>{children}</div>
         </main>
       </body>
     </html>

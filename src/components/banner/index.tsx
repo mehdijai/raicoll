@@ -2,30 +2,16 @@ import Image from "next/image";
 import styles from "./banner.module.scss";
 import { IconMusic } from "@tabler/icons-react";
 import TopChart from "./topChart";
+import { IArtist, ISong } from "@/lib/data";
 
-const artists = [
-  {
-    name: "Khaled",
-    image: "/artists/khaled.png",
-  },
-  {
-    name: "Mami",
-    image: "/artists/mami.png",
-  },
-  {
-    name: "Mimoun El Oujdi",
-    image: "/artists/mimoun-eloujdi.png",
-  },
-  {
-    name: "Hasni",
-    image: "/artists/hasni.png",
-  },
-  {
-    name: "Nasro",
-    image: "/artists/nasro.png",
-  },
-];
-export default function Banner() {
+export default function Banner({
+  props,
+}: {
+  props: {
+    topArtists: IArtist[];
+    topSongs: ISong[];
+  };
+}) {
   return (
     <div className={styles.banner}>
       <div className={styles.content}>
@@ -38,9 +24,9 @@ export default function Banner() {
           </p>
           <div className={styles.data}>
             <ul className={styles.artists}>
-              {artists.map((artist) => {
+              {props.topArtists.map((artist) => {
                 return (
-                  <li key={artist.name} className={styles.artist}>
+                  <li key={artist.id} className={styles.artist}>
                     <Image
                       src={artist.image}
                       alt={artist.name}
@@ -53,7 +39,7 @@ export default function Banner() {
             </ul>
             <div className={styles.stats}>
               <IconMusic size={18} />
-              <span>230k song</span>
+              <span>230k songs</span>
             </div>
           </div>
         </div>
@@ -72,7 +58,7 @@ export default function Banner() {
           className={styles.portrait}
         />
       </div>
-      <TopChart />
+      <TopChart topSongs={props.topSongs} />
     </div>
   );
 }
