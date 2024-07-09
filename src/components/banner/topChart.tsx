@@ -1,10 +1,10 @@
 import styles from "./topChart.module.scss";
 import Image from "next/image";
 import { IconHeart } from "@tabler/icons-react";
-import { ISong } from "@/lib/data";
 import { NumberFormatter } from "@/utils/number-formatter";
+import { Song } from "@/types/models.type";
 
-export default function TopChart({ topSongs }: { topSongs: ISong[] }) {
+export default function TopChart({ topSongs }: { topSongs: Song[] }) {
   return (
     <div className={styles["top-chart"]}>
       <h2>Top Songs</h2>
@@ -15,7 +15,7 @@ export default function TopChart({ topSongs }: { topSongs: ISong[] }) {
               <div className={styles.image}>
                 <Image
                   src={song.album.cover}
-                  alt={song.album.name}
+                  alt={song.album.title}
                   width={60}
                   height={60}
                 />
@@ -23,10 +23,10 @@ export default function TopChart({ topSongs }: { topSongs: ISong[] }) {
               <div className={styles.data}>
                 <span className={styles["item-name"]}>
                   {song.album.artists?.map((artist) => artist.name).join(", ")}{" "}
-                  - {song.name}
+                  - {song.title}
                 </span>
                 <span className={styles["item-artists"]}>
-                  {song.album.name}
+                  {song.album.title}
                 </span>
                 <span className={styles["item-likes"]}>
                   {NumberFormatter.localShort(song.likes)} likes

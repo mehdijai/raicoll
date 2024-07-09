@@ -1,6 +1,11 @@
-import { albums } from "@/lib/data";
+import prisma from "@/utils/db";
 import { NextResponse } from "next/server";
 
-export function GET() {
+export async function GET() {
+  const albums = await prisma.album.findMany({
+    include: {
+      artists: true,
+    },
+  });
   return NextResponse.json({ albums }, { status: 200 });
 }

@@ -1,6 +1,7 @@
-import { artists } from "@/lib/data";
+import prisma from "@/utils/db";
 import { NextResponse } from "next/server";
 
-export function GET() {
+export async function GET() {
+  const artists = await prisma.artist.findMany();
   return NextResponse.json({ artists }, { status: 200 });
 }

@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Artist {
+  id        String   @id @default(uuid())
+  name      String
+  image     String   @db.Text
+  biography String   @db.Text
+  likes     Int      @default(0)
+  albums    Album[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("artists")
+}
+
+model Album {
+  id        String    @id @default(uuid())
+  title      String
+  year      Int
+  likes     Int       @default(0)
+  type      AlbumType
+  cover     String    @db.Text
+  artists   Artist[]
+  songs     Song[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("albums")
+}
+
+model Song {
+  id        String   @id @default(uuid())
+  filePath  String
+  title     String
+  likes     Int      @default(0)
+  mimetype  String   @default("audio/mp3")
+  albumId   String
+  album     Album    @relation(fields: [albumId], references: [id])
+  trackNb   Int      @default(1)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("songs")
+}
+
+enum AlbumType {
+  SINGLE
+  ALBUM
+}

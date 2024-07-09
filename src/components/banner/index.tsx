@@ -2,14 +2,14 @@ import Image from "next/image";
 import styles from "./banner.module.scss";
 import { IconMusic } from "@tabler/icons-react";
 import TopChart from "./topChart";
-import { IArtist, ISong } from "@/lib/data";
+import { Artist, Song } from "@/types/models.type";
 
 export default function Banner({
   props,
 }: {
   props: {
-    topArtists: IArtist[];
-    topSongs: ISong[];
+    topArtists: Artist[];
+    topSongs: Song[];
   };
 }) {
   return (
