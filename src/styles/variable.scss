@@ -5,3 +5,8 @@ $light: rgba(239, 238, 224, 1);
 $gray: #616161;
 $dark: rgba(29, 33, 35, 1);
 $dark-alt: rgba(26, 30, 31, 1);
+
+:export {
+  primaryColor: $primary;
+  secondaryColor: $secondary;
+}

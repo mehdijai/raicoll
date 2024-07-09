@@ -1,0 +1,7 @@
+@import "./variable.scss";
+
+:export {
+  primaryColor: $primary;
+  secondaryColor: $secondary;
+  grayColor: $gray;
+}
