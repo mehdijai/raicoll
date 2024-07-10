@@ -9,8 +9,12 @@ import {
   IconLogout,
 } from "@tabler/icons-react";
 import { Tooltip } from "@mui/material";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
@@ -18,29 +22,53 @@ export default function Sidebar() {
       </div>
       <div className={styles["nav-group"]}>
         <ul className={styles["nav-list"]}>
-          <li className={`${styles["nav-item"]} ${styles["active"]}`}>
-            <Tooltip title="Home" placement="right" arrow>
-              <IconHome />
-            </Tooltip>
+          <li
+            className={`${styles["nav-item"]} ${
+              pathname === "/" ? styles["active"] : ""
+            }`}
+          >
+            <Link href="/">
+              <Tooltip title="Home" placement="right" arrow>
+                <IconHome />
+              </Tooltip>
+            </Link>
           </li>
-          <li className={styles["nav-item"]}>
-            <Tooltip title="Playlists" placement="right" arrow>
-              <IconPlaylist />
-            </Tooltip>
+          <li
+            className={`${styles["nav-item"]} ${
+              pathname === "/playlists" ? styles["active"] : ""
+            }`}
+          >
+            <Link href="/playlists">
+              <Tooltip title="Playlists" placement="right" arrow>
+                <IconPlaylist />
+              </Tooltip>
+            </Link>
           </li>
-          <li className={styles["nav-item"]}>
-            <Tooltip title="Trending" placement="right" arrow>
-              <IconFlame />
-            </Tooltip>
+          <li
+            className={`${styles["nav-item"]} ${
+              pathname === "/trending" ? styles["active"] : ""
+            }`}
+          >
+            <Link href="/trending">
+              <Tooltip title="Trending" placement="right" arrow>
+                <IconFlame />
+              </Tooltip>
+            </Link>
           </li>
         </ul>
       </div>
       <div className={styles["nav-group"]}>
         <ul className={styles["nav-list"]}>
-          <li className={styles["nav-item"]} title="Profile">
-            <Tooltip title="Profile" placement="right" arrow>
-              <IconUser />
-            </Tooltip>
+          <li
+            className={`${styles["nav-item"]} ${
+              pathname === "/profile" ? styles["active"] : ""
+            }`}
+          >
+            <Link href="/profile">
+              <Tooltip title="Profile" placement="right" arrow>
+                <IconUser />
+              </Tooltip>
+            </Link>
           </li>
           <li className={styles["nav-item"]}>
             <Tooltip title="Logout" placement="right" arrow>

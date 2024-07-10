@@ -6,6 +6,8 @@ import "@styles/components.scss";
 import Sidebar from "../components/sidebar";
 import Header from "@/components/header";
 import Player from "@/components/player";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 export const metadata: Metadata = {
   title: "RaiColl",
@@ -24,7 +26,9 @@ export default function RootLayout({
         <Sidebar />
         <main className={styles.main}>
           <Header />
-          <div className={styles.page}>{children}</div>
+          <Suspense fallback={<Loading />}>
+            <div className={styles.page}>{children}</div>
+          </Suspense>
         </main>
         <Player />
       </body>

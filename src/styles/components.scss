@@ -29,3 +29,10 @@ ul {
     width: 430px;
   }
 }
+
+a {
+  color: inherit;
+  &:visited {
+    color: inherit;
+  }
+}
