@@ -1,6 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# RaiColl
 
-## Getting Started
+I created this project as my first NextJS/React App to practice. I'm new to NextJS and React world in general. So, I'm creating this project just to learn more. Under the infamous quote: **"Learn by doing"**
+
+## NextJS Default README
 
 First, run the development server:
 

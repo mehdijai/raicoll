@@ -1,0 +1,66 @@
+.inset-card {
+  width: 180px;
+  aspect-ratio: 2/3;
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(#fff, 0.1);
+  box-shadow: 0 0 10px rgba($dark-alt, 1);
+  background-color: $dark;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+  }
+
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: rgba($dark, 0.6);
+    padding: 1rem;
+    background: linear-gradient(
+      0deg,
+      rgba($dark, 0.9) 0%,
+      rgba($dark, 0.5) 100%
+    );
+    opacity: 0.6;
+    transition: opacity 0.2s ease-in;
+    h5 {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.2s ease-in, transform 0.2s ease-out;
+    }
+    h6 {
+      margin-top: 5px;
+      color: lighten($gray, 10);
+      font-size: 0.7rem;
+      font-weight: 500;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.3s ease-in, transform 0.3s ease-out;
+    }
+  }
+
+  &:hover {
+    .overlay {
+      opacity: 1;
+      h5,
+      h6 {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}

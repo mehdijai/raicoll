@@ -1,0 +1,36 @@
+# TO-DOs
+
+- [x] Layout
+  - [x] Sidebar
+  - [x] Main content
+  - [x] Player
+  - [x] Navigations
+- [x] Home Page
+  - [x] Banner
+  - [x] Top Songs list
+  - [x] Carousels
+  - [x] Dynamic Data
+- [x] Playlists Page
+- [ ] Trending Page
+- [ ] Profile Page
+- [ ] Single Playlist Page
+- [ ] Single Song Modal
+- [ ] Artist Page
+- [ ] Dynamic Global Player
+- [ ] API
+  - [x] MVP Routes
+  - [x] MVP Models
+  - [ ] Streamer
+  - [ ] Adv Routes
+  - [ ] Adv Models
+  - [ ] Permissions Middlewares
+- [ ] AUTH
+  - [ ] JWT
+  - [ ] Auth System
+  - [ ] Security Layers
+  - [ ] Permissions
+- [ ] Multi-Layout
+  - [ ] Auth Layout
+  - [ ] Auth Pages
+- [ ] SEO Handling
+- [ ] Optimize And Best Practices

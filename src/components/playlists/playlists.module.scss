@@ -1,0 +1,39 @@
+.playlists-page {
+  .filters {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 1rem 0;
+    button {
+      background-color: transparent;
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      border: 1px solid $gray;
+      color: $gray;
+      outline: none;
+      cursor: pointer;
+      transition: border 0.2s ease-in, color 0.2s ease-in;
+
+      &:not(.active):hover {
+        color: #fff;
+        border-color: #fff;
+      }
+
+      &.active {
+        background-color: $secondary;
+        color: $dark-alt;
+        border-color: $secondary;
+        &:hover {
+          background-color: lighten($secondary, 10);
+        }
+      }
+    }
+  }
+  .list {
+    display: grid;
+    grid-template-columns: repeat(5, 180px);
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: space-between;
+  }
+}

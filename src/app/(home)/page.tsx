@@ -26,7 +26,7 @@ export default async function Home() {
   });
   const popArtistsRepo: { artists: Artist[] } = await popArtistsRes.json();
   return (
-    <div className={styles["home-page"]}>
+    <div className={`page-section ${styles["home-page"]}`}>
       <Banner
         props={{
           topArtists: topArtistsRepo.artists,

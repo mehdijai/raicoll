@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./player.module.scss";
 import prisma from "@/utils/db";
-import { Fab, IconButton, Slider } from "@mui/material";
+import { Fab, Slider } from "@mui/material";
 import {
   IconArrowsShuffle2,
   IconPlayerPlayFilled,
